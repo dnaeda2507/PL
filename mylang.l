@@ -1,9 +1,9 @@
 %{
 #include <stdio.h>
-#include "y.tab.h" // Yacc ile birlikte kullanilacaksa
+//#include "y.tab.h" 
 %}
 
-// Tanimlamalar
+
 DIGIT       [0-9]
 LETTER      [a-zA-Z]
 ID          {LETTER}({LETTER}|{DIGIT}|_)*
@@ -12,59 +12,66 @@ FLOAT       {DIGIT}+"."{DIGIT}+
 STRING      \"([^\"]*)\"
 CHAR        \'([^\'])\'
 
-// Anahtar kelimeler do eklendi
+
 %%
-"if"        { return IF; }
-"else"      { return ELSE; }
-"for"       { return FOR; }
-"do"        { return DO; }
-"while"     { return WHILE; }
-"func"      { return FUNC; }
-"print"     { return PRINT; }
-"exit"      { return EXIT; }
-"input"     { return INPUT; }
-"true"      { return TRUE; }
-"false"     { return FALSE; }
+"if"         { printf("IF\n"); }
+"else"       { printf("ELSE\n"); }
+"for"        { printf("FOR\n"); }
+"do"         { printf("DO\n"); }
+"while"      { printf("WHILE\n"); }
+"func"       { printf("FUNC\n"); }
+"print"      { printf("PRINT\n"); }
+"exit"       { printf("EXIT\n"); }
+"input"      { printf("INPUT\n"); }
+"true"       { printf("TRUE\n"); }
+"false"      { printf("FALSE\n"); }
+
+"int"        { printf("INT\n"); }
+"float"      { printf("FLOAT\n"); }
+"char"       { printf("CHAR\n"); }
+"string"     { printf("STRING\n"); }
+"boolean"    { printf("BOOLEAN\n"); }
 
 
-// Operatorler ve parantezler  us () Operatoru** eklendi
-"+"         { return '+'; }
-"-"         { return '-'; }
-"*"         { return '*'; }
-"/"         { return '/'; }
-"%"         { return '%'; }
-"**"        { return POW; }
-"="         { return '='; }
-"<"         { return '<'; }
-">"         { return '>'; }
-"=="        { return EQ; }
-"<="        { return LEQ; }
-">="        { return GEQ; }
-"!="        { return NEQ; }
-"&&"        { return AND; }
-"||"        { return OR; }
-"!"         { return NOT; }
-"("         { return '('; }
-")"         { return ')'; }
-"{"         { return '{'; }
-"}"         { return '}'; }
-":"         { return ':'; }
-";"         { return ';'; }
 
-// Degiskenler ve sayilar
-{ID}        { return IDENTIFIER; }
-{INTEGER}   { return INTEGER; }
-{FLOAT}     { return FLOAT; }
-{STRING}    { return STRING; }
-{CHAR}      { return CHARACTER; }
 
-// Yorumlar
-"~"[^~]*"~" { /* Yorumlari yoksay */ }
+"+"          { printf("+"); }
+"-"          { printf("-\n"); }
+"*"          { printf("*\n"); }
+"/"          { printf("/\n"); }
+"%"          { printf("%%\n"); }
+"**"         { printf("POW\n"); }
+"="          { printf("=\n"); }
+"<"          { printf("<\n"); }
+">"          { printf(">\n"); }
+"=="         { printf("EQ\n"); }
+"<="         { printf("LEQ\n"); }
+">="         { printf("GEQ\n"); }
+"!="         { printf("NEQ\n"); }
+"&&"         { printf("AND\n"); }
+"||"         { printf("OR\n"); }
+"!"          { printf("NOT\n"); }
+"("          { printf("(\n"); }
+")"          { printf(")\n"); }
+"{"          { printf("{\n"); }
+"}"          { printf("}\n"); }
+":"          { printf(":\n"); }
+";"          { printf(";\n"); }
 
-// Bosluklar
-[ \t\n]+    { /* Bosluklari yoksay */ }
 
-.           { printf("Bilinmeyen karakter: %s\n", yytext); }
+{ID}        { printf("IDENTIFIER\n"); }
+{INTEGER}   { printf("INTEGER\n"); }
+{FLOAT}     { printf("FLOAT\n"); }
+{STRING}    { printf("STRING\n"); }
+{CHAR}      { printf("CHARACTER\n"); }
+
+
+"~"[^~]*"~"  { printf("COMMENT\n"); }
+
+
+[ \t\n]+    { /* Boşlukları yoksay */ }
+
+.           { printf("UNKNOWN: %s\n", yytext); }
 %%
 
 int yywrap() { return 1; }
