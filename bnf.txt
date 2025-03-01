@@ -53,10 +53,7 @@
 //for
 <for_statement> ::= "for" "(" <assignment> ":" <condition> ":" <expression> ")" "{" <statement_list> "}"
 
-//while
-<while_statement> ::= "while" "(" <condition> ")" "{" <statement_list> "}"
-
-//while silinip do-while eklenecek
+// do-while 
 <do_while_statement> ::= "do" "{" <statement_list> "}" "while" "(" <condition> ")"
 
 //comment
