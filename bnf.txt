@@ -28,8 +28,8 @@
 
 //Mathematical operations with  precedence 
 
-<expression> ::= <term> | <expression> "+" <term> | <expression> "-" <term>  
-<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor> | <term> "%" <factor>| <term> "**" <factor> 
+<expression> ::= <expression> "+" <term> | <expression> "-" <term> | <term>
+<term> ::= <term> "*" <factor> | <term> "/" <factor> | <term> "%" <factor>| <term> "**" <factor> | <factor> 
 <factor> ::= <integer> | <float> | <identifier> | <character> | <string> | "(" <expression> ")"
 
 //Defining conditions
