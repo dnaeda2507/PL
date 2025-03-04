@@ -1,0 +1,5 @@
+int x = 10;
+float y = 3.14;
+if (x > y) {
+    print("X büyüktür Y");
+}
