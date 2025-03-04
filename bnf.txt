@@ -2,7 +2,7 @@
 <program> ::= <statement> | <statement_list>
 
 //statement can be assignment, if block, loop or print 
-<statement> ::= <assignment> | <if_statement> | <for_statement> | <do_while_statement> | <command> ";"
+<statement> ::= <assignment> | <constant> | <if_statement> | <for_statement> | <do_while_statement> | <command> ";"
 
 //statement_list
 <statement_list> ::= <statement> | <statement_list> <statement>
@@ -12,6 +12,9 @@
 
 //assigning variables
 <assignment> ::= <identifier> "=" <expression> ";"
+
+//defining constants
+<constant> ::= "const" <identifier> "=" <expression> ";"
 
 //variable types
 <boolean> ::= "true" | "false"
