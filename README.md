@@ -141,7 +141,7 @@ White is a simple programming language that includes fundamental programming con
 } while (x < 5);
 
 ***Comments***
-* •	Comments are written between ~ symbols.
+* 	Comments are written between ~ symbols.
 
 ***Running a White Program***
 *      To compile and run a White program, use the following command:
