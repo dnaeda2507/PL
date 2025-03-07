@@ -10,7 +10,8 @@ ID          {LETTER}({LETTER}|{DIGIT}|_)*
 INTEGER     {DIGIT}+
 FLOAT       {DIGIT}+"."{DIGIT}+
 STRING      \"([^\"]*)\"
-CHAR        \'([^\'])\'
+CHAR        \'[^']\'
+
 
 
 %%
@@ -25,22 +26,16 @@ CHAR        \'([^\'])\'
 "input"      { printf("INPUT\n"); }
 "true"       { printf("TRUE\n"); }
 "false"      { printf("FALSE\n"); }
-
-"int"        { printf("INT\n"); }
-"float"      { printf("FLOAT\n"); }
-"char"       { printf("CHAR\n"); }
-"string"     { printf("STRING\n"); }
-"boolean"    { printf("BOOLEAN\n"); }
-
+"const"      { printf("CONST\n"); }
 
 
 
 "+"          { printf("+"); }
 "-"          { printf("-\n"); }
-"*"          { printf("*\n"); }
 "/"          { printf("/\n"); }
 "%"          { printf("%%\n"); }
 "**"         { printf("POW\n"); }
+"*"          { printf("*\n"); }
 "="          { printf("=\n"); }
 "<"          { printf("<\n"); }
 ">"          { printf(">\n"); }
@@ -69,7 +64,7 @@ CHAR        \'([^\'])\'
 "~"[^~]*"~"  { printf("COMMENT\n"); }
 
 
-[ \t\n]+    { /* Boşlukları yoksay */ }
+[ \t\r\n]+    { /* Boşluk, tab, CR ve LF karakterlerini yoksay */ }
 
 .           { printf("UNKNOWN: %s\n", yytext); }
 %%
