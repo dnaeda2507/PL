@@ -1,4 +1,4 @@
-# Programming Language Mylang
+# Programming Language White
 ## 20210808039 Derya Salihoğlu, 20210808072 Eda Dana, 20230808604 Ecenur Soybelli,20230808622 Şevval yöntem 
 ### BNF Grammer
 ---------------------------------------------------------------
