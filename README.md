@@ -145,7 +145,7 @@ White is a simple programming language that includes fundamental programming con
 
 ***Running a White Program***
 *      To compile and run a White program, use the following command:
-make ./exampleprog < example.wt 
+make ./mylang < exampleprog.wt
 
 
 
