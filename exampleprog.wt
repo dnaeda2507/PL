@@ -1,5 +1,76 @@
-x = 10;
-y = 3.14;
-if (x > y) {
-    print("X büyüktür Y");
+const pi = 3.14; ~ Define a constant value ~
+radius = 5; ~ Assign an integer value to a variable ~
+area = pi * radius * radius; ~ Compute the area of a circle ~
+print(area); ~ Print the result ~
+
+~ This if-else block controls if the person is adult or minor ~
+age = 18;
+if (age >= 18) {
+    print("You are an adult");
+} else {
+    print("You are a minor");
 }
+
+~ This for loop sums all numbers between 1 and 10 ~
+sum = 0;
+for (i = 1 : i <= 10 : i + 1) {
+    sum = sum + i;
+}
+print(sum);
+
+~ This do-while loop prints the numbers from 1 to 5 ~
+x = 1;
+do {
+    print(x); ~ Print current value of x ~
+    x = x + 1;
+} while (x <= 5);
+
+~ This code takes the name of the user and says hello to the user ~
+input(username); ~ Take input from user ~
+print("Hello, " + username); ~ Print greeting message ~
+
+~ This function calculates the square of given number ~
+func square(x) {
+    return x * x;
+}
+result = square(4); ~ Call function and store result ~
+print(result); ~ Print the square of 4 ~
+
+~ This block checks if boolean variables works correctly ~
+isTrue = true;
+isFalse = false;
+if (isTrue && !isFalse) {
+    print("Boolean logic works correctly");
+}
+
+~ This block defines a string and a char. Then it prints them by concatenating them ~
+greeting = "Hello, World";
+charVal = '!';
+print(greeting + charVal);
+
+~ Mathematical Operations~
+a = 10;
+b = 2;
+print(a + b); ~ Addition ~
+print(a - b); ~ Subtraction ~
+print(a * b); ~ Multiplication ~
+print(a / b); ~ Division ~
+print(a % b); ~ Modulus ~
+print(a ** b); ~ Exponentiation ~
+print(a + 3 ** b / 6 - 4); ~ Complex operation ~
+
+~ Relational operators ~
+print(a > b);
+print(a < b);
+print(a == b);
+print(a >= b);
+print(a <= b);
+print(a != b);
+
+~ Logical Operators ~
+print(a > 5 && b < 3);
+print(a > 5 || b > 3);
+print(!isFalse); ~ isFalse defined as false before ~
+
+~ Comment ~
+~ This is a comment in our language ~
